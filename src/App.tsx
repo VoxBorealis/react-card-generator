@@ -1,26 +1,36 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import './components/Card.css'
+import './components/Button.css'
 
-function App() {
+import Deck from './Deck';
+import Card from './components/Card';
+import Button from './components/Button';
+import { CardProps } from './types';
+
+
+
+const App = () => {
+  const [deck, setDeck] = useState(new Deck())
+  const [currentCard, setCurrentCard] = useState<CardProps>({ rank: 'A', suit:'♣️'})
+
+
+  const handleClick = () => {
+    console.log(deck, currentCard)
+    const newCard: CardProps = deck.pop()
+    setCurrentCard(newCard)
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <div className='App'>
+      <header className='App-header'>
+        Card Generator
       </header>
+      <Card {...currentCard}/>
+      <Button onClick={handleClick}>Generate a new card</Button>
     </div>
-  );
-}
+  )
+};
 
-export default App;
+
+export default App
