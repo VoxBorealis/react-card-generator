@@ -17,8 +17,16 @@ const App = () => {
 
   const handleClick = () => {
     console.log(deck, currentCard)
-    const newCard: CardProps = deck.pop()
-    setCurrentCard(newCard)
+    
+      const card = deck.cards.pop()
+      if (card) {
+        setCurrentCard(card)
+      } else {
+        console.log("Deck is empty")
+      }
+
+    //const newCard: CardProps = deck.pop()
+    //setCurrentCard(newCard)
   }
 
   return (
@@ -26,6 +34,9 @@ const App = () => {
       <header className='App-header'>
         Card Generator
       </header>
+      <h3 className='App-h3'>
+        Cards left in the deck: {deck.cards.length}
+      </h3>
       <Card {...currentCard}/>
       <Button onClick={handleClick}>Generate a new card</Button>
     </div>
