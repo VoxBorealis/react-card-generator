@@ -29,18 +29,6 @@ class Deck {
       }
       this.shuffleArray(this.cards)
     }
-  
-    pop = (): CardProps => {
-      const card = this.cards.pop()
-      if (card) {
-        return card
-      }
-      const defaultCard: CardProps = {
-        rank: 'A',
-        suit: '♠️'
-      }
-      return defaultCard
-    }
 }
 
 export default Deck
