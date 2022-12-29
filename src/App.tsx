@@ -33,7 +33,7 @@ const App = () => {
       </h3>
       <hr></hr>
       <Card {...currentCard}/>
-      <Button onClick={handleClick}>Generate a new card</Button>
+      <Button onClick={handleClick}>Draw a card</Button>
       <Footer ></Footer>
     </div>
   )
