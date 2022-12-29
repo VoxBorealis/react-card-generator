@@ -25,7 +25,6 @@
 }
 
 .Card:hover {
-  /*transform: translate(3px, 3px);*/
   background-color: aliceblue;
   transform: rotate3d(0.2, 0.0, 0.1, 15deg);
   box-shadow: 5px;

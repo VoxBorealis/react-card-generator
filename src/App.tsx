@@ -8,7 +8,6 @@ import Footer from './components/Footer';
 import { CardProps } from './types';
 
 
-
 const App = () => {
   // eslint-disable-next-line
   const [deck, setDeck] = useState(new Deck())
@@ -16,8 +15,6 @@ const App = () => {
 
 
   const handleClick = () => {
-    console.log(deck, currentCard)
-    
       const card = deck.cards.pop()
       if (card) {
         setCurrentCard(card)
